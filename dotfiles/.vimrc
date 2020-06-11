@@ -7,8 +7,6 @@ call plug#begin('~/.vim/plugged')
 " Dracula
 Plug 'dracula/vim', {'as': 'dracula'}
 
-" Syntax Highlighting
-Plug 'dag/vim-fish'
 " Plug 'sheerun/vim-polyglot'
 
 " Airline
