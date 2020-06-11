@@ -3,8 +3,8 @@
 echo "Creating symlinks for dotfiles to $HOME"
 
 # make backups of already existing dotfiles
-for f in dotfiles/\.[^.]*; do
-  FILE="$(basename $f)"
+for f in $(find dotfiles -type f); do
+  FILE="${f#dotfiles/}"
   if [[ -f "~/$FILE" ]]; then
     mkdir -p ~/.dotfiles.bak
     cp "~/$FILE" ~/.dotfiles.bak/
@@ -12,9 +12,14 @@ for f in dotfiles/\.[^.]*; do
   fi
 done
 
+# make parent directories
+for f in $(find dotfiles/ -type d); do
+  mkdir -p ~/${f#dotfiles/}
+done
+
 # Symlink all dotfiles
-for f in dotfiles/\.[^.]*; do
-  FILE="$(basename $f)"
+for f in $(find dotfiles -type f); do
+  FILE="${f#dotfiles/}"
   ln -sf "$PWD/dotfiles/$FILE" "$HOME"
 done
 
