@@ -14,7 +14,7 @@ bash ./setup.sh
 ## Explaining what it does
 Feel free to peruse the scripts if that's what you like, but I shall summarize what the scripts do.
 
-1. Checks to see whether the environment is Linux or macOS and runs the appropriate setup script. (I use WSL2 on Windows)
+1. [setup.sh](setup.sh) checks to see whether the environment is Linux or macOS and runs the appropriate setup script. (I use WSL2 on Windows)
 2. Each script:
    1. Installs some necessary packages (either with APT, Homebrew, or plain old git+bash magic)
    2. Installs ZSH and zplug
