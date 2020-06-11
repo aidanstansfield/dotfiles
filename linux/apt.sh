@@ -1,5 +1,5 @@
 # install necessary packages with apt
-sudo apt install nvim -y
+sudo apt install neovim -y
 sudo apt install fzf -y
 
 # install vim-plug for nvim
