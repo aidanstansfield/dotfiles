@@ -31,8 +31,8 @@ Plug 'jiangmiao/auto-pairs'
 "    \ 'branch': 'next',
 "    \ 'do': 'bash install.sh',
 "    \ }
-"
-" " NERD Commenter
+
+" NERD Commenter
 Plug 'scrooloose/nerdcommenter'
 
 " Neoformat
@@ -158,11 +158,16 @@ set shiftround
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 
-" persistent undo between file reloads
-if has('persistent_undo')
-    set undofile
-    set undodir=~/.vim/tmp,.
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
 endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 set listchars=tab:»·,trail:·,nbsp:·
 
 imap jj <Esc>
