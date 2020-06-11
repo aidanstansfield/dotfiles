@@ -1,6 +1,6 @@
 # Dotfiles
 
-This is my 2nd take at a dotfiles repo. My first attempt followed [this Atlassian dotfiles tutorial](https://www.atlassian.com/git/tutorials/dotfiles), however I found it to be rather messy. This attempt is based off of [zellwk's dotfiles repo.](https://github.com/zellwk/dotfiles). I plan on doing a blog post about why I switched and how I setup my whole dev environment, and if I remember I'll link it here.
+This is my 2nd take at a dotfiles repo. My first attempt followed [this Atlassian dotfiles tutorial](https://www.atlassian.com/git/tutorials/dotfiles), however I found it to be rather messy. This attempt is based off of [zellwk's dotfiles repo](https://github.com/zellwk/dotfiles). I plan on doing a blog post about why I switched and how I setup my whole dev environment, and if I remember I'll link it here.
 
 ## Usage
 The TL;DR is
