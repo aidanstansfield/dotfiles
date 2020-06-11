@@ -5,9 +5,12 @@ echo "Creating symlinks for dotfiles to $HOME"
 # make backups of already existing dotfiles
 for f in $(find dotfiles -type f); do
   FILE="${f#dotfiles/}"
-  if [[ -f "~/$FILE" ]]; then
+  if [[ -f ~/$FILE ]]; then
     mkdir -p ~/.dotfiles.bak
-    cp "~/$FILE" ~/.dotfiles.bak/
+    if [[ $(dirname $FILE) != "." ]]; then
+      mkdir -p ~/.dotfiles.bak/$(dirname $FILE)
+    fi
+    cp ~/$FILE ~/.dotfiles.bak/$FILE
     echo "Made backup of $FILE in ~/.dotfiles.bak/"
   fi
 done
@@ -20,7 +23,7 @@ done
 # Symlink all dotfiles
 for f in $(find dotfiles -type f); do
   FILE="${f#dotfiles/}"
-  ln -sf "$PWD/dotfiles/$FILE" "$HOME"
+  ln -sf "$PWD/dotfiles/$FILE" "$HOME/$FILE"
 done
 
 # Source .zshrc to update env
