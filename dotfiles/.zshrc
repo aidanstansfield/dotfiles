@@ -44,9 +44,6 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
-# magic to get config working
-alias config='/usr/bin/git --git-dir=/home/aidan/.cfg/ --work-tree=/home/aidan'
-
 # magic to start ssh_agent
 if [[ -f ~/.ssh/start_agent ]]; then
 	source ~/.ssh/start_agent

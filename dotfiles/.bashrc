@@ -122,15 +122,9 @@ if [[ -f ~/.bash_prompt ]]; then
 	. ~/.bash_prompt
 fi
 
-#export TERM=screen
-# magic to get config working
-alias config='/usr/bin/git --git-dir=/home/aidan/.cfg/ --work-tree=/home/aidan'
 # remove annoying 'ding' that happens on error
 bind 'set bell-style none'
-# for docker desktop hack NOTE: no longer needed due to wsl 2 :)
-# export DOCKER_HOST=tcp://localhost:2375
-# wsl opens up in %USERPROFILE% **changed with startingDirectory in terminal settings
-# cd $HOME
+
 # magic to start ssh_agent
 if [[ -f ~/.ssh/start_agent ]]; then
 	. ~/.ssh/start_agent
