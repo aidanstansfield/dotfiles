@@ -20,9 +20,14 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+dircolors="eeleater"
+lscolors="molokai"
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors/Dracula.dircolors && eval "$(dircolors -b ~/.dircolors/Dracula.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.dircolors/$dircolors && eval "$(dircolors -b ~/.dircolors/$dircolors)" || eval "$(dircolors -b)"
+    if [[ -f ~/.lscolors/$lscolors ]]; then
+        LS_COLORS=$(cat ~/.lscolors/$lscolors); export LS_COLORS
+    fi
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
