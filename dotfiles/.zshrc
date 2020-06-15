@@ -26,10 +26,20 @@ case "${unameOut}" in
     *)          MACHINE="UNKNOWN:${unameOut}"
 esac
 
+if [[ $MACHINE == "Mac" ]]; then
+    PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+    PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+    PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+    PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
+    export PATH
+fi
+
 dircolors="eeleater"
 lscolors="molokai"
+
+which -s dircolors 1>/dev/null # -s doesn't work on macOS :shrug:
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [[ $? == 0 ]]; then
     test -r ~/.dircolors/$dircolors && eval "$(dircolors -b ~/.dircolors/$dircolors)" || eval "$(dircolors -b)"
     if [[ -f ~/.lscolors/$lscolors ]]; then
         LS_COLORS=$(cat ~/.lscolors/$lscolors); export LS_COLORS
@@ -94,3 +104,5 @@ fi
 
 zplug load
 ## end of zplug stuff
+
+
