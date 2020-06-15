@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-# Installing xcode command line tools
-echo "installing xcode command line tools"
-xcode-select --install
-
 # Install Homebrew (if not installed)
-echo "Installing Homebrew."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+which -s brew
+if [[ $? != 0 ]] ; then
+    echo "Please install Homebrew"
+    exit 1
+end
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -38,17 +37,14 @@ brew install grep
 # Install useful binaries.
 brew install git
 
-# Installs Casks
-brew tap caskroom/cask
+# Install fzf
+brew install fzf
 
-## Apps I use
-brew cask install google-chrome #Chrome
-brew cask install iterm2
-brew cask install kap
-brew cask install keycastr
-brew cask install mongodb-compass
-brew cask install slack
-brew cask install spotify
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+# neovim
+brew install neovim
 
 # Remove outdated versions from the cellar.
 brew cleanup

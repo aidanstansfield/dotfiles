@@ -19,6 +19,12 @@ zstyle :compinstall filename '/home/aidan/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     MACHINE=Linux;;
+    Darwin*)    MACHINE=Mac;;
+    *)          MACHINE="UNKNOWN:${unameOut}"
+esac
 
 dircolors="eeleater"
 lscolors="molokai"
@@ -55,6 +61,7 @@ if [[ -f ~/.ssh/start_agent ]]; then
 fi
 
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## zplug stuff
 source ~/.zplug/init.zsh
