@@ -1,4 +1,16 @@
-alias up='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     MACHINE=Linux;;
+    Darwin*)    MACHINE=Mac;;
+    *)          MACHINE="UNKNOWN:${unameOut}"
+esac
+
+if [[ $MACHINE == "Mac" ]]; then
+    alias up='brew update && brew upgrade'
+elif [[ $MACHINE == "Linux" ]]; then
+    alias up='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+fi
+
 alias startvpn='sudo openvpn --askpass --daemon --config '
 alias stopvpn='sudo pkill -f '
 if type nvim > /dev/null 2>&1; then
