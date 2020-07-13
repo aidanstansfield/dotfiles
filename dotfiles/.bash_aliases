@@ -18,3 +18,6 @@ if type nvim > /dev/null 2>&1; then
 fi
 alias ivm='vim'
 alias ll='ls -lA'
+if [ -x /usr/bin/batcat ]; then
+    alias bat='batcat'
+fi
