@@ -21,3 +21,4 @@ alias ll='ls -lA'
 if [ -x /usr/bin/batcat ]; then
     alias bat='batcat'
 fi
+alias dc='docker-compose'

@@ -34,6 +34,9 @@ if [[ $MACHINE == "Mac" ]]; then
     export PATH
 fi
 
+PATH="$HOME/.local/bin:$PATH"
+export PATH
+
 dircolors="eeleater"
 lscolors="molokai"
 
