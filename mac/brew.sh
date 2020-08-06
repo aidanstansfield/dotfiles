@@ -47,5 +47,8 @@ $(brew --prefix)/opt/fzf/install
 # neovim
 brew install neovim
 
+# bat
+brew install bat
+
 # Remove outdated versions from the cellar.
 brew cleanup

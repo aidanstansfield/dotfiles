@@ -27,13 +27,16 @@ case "${unameOut}" in
 esac
 
 if [[ $MACHINE == "Mac" ]]; then
-    PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-    PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
-    PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
-    PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
-    PATH="$(brew --prefix openvpn)/sbin:$PATH"
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+    PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+    PATH="/usr/local/opt/openvpn/sbin:$PATH"
     export PATH
 fi
+
+PATH="$HOME/.local/bin:$PATH"
+export PATH
 
 dircolors="eeleater"
 lscolors="molokai"
@@ -56,6 +59,9 @@ fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# bat colour
+export BAT_THEME="Dracula"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
