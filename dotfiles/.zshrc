@@ -31,6 +31,7 @@ if [[ $MACHINE == "Mac" ]]; then
     PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
     PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
     PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
+    PATH="$(brew --prefix openvpn)/sbin:$PATH"
     export PATH
 fi
 

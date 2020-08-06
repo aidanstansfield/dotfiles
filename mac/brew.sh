@@ -36,6 +36,7 @@ brew install grep
 
 # Install useful binaries.
 brew install git
+brew install openvpn
 
 # Install fzf
 brew install fzf
