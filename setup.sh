@@ -14,3 +14,5 @@ elif [[ "$MACHINE" == "Mac" ]]
   then 
     source mac/setup.sh
 fi
+
+echo "You may need to run 'bat cache -b'"
