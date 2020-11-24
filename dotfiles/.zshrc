@@ -4,7 +4,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd extendedglob nomatch notify correct
 unsetopt beep
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 
@@ -113,3 +113,7 @@ zplug load
 ## end of zplug stuff
 
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/aidan/.sdkman"
+[[ -s "/Users/aidan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aidan/.sdkman/bin/sdkman-init.sh"
