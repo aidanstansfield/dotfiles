@@ -32,6 +32,8 @@ if [[ $MACHINE == "Mac" ]]; then
     PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
     PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
     PATH="/usr/local/opt/openvpn/sbin:$PATH"
+    PATH="/usr/local/opt/ruby/bin:$PATH"
+    PATH="$PATH:/Users/aidan/go/bin"
     export PATH
 fi
 
@@ -112,8 +114,7 @@ fi
 zplug load
 ## end of zplug stuff
 
-
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/aidan/.sdkman"
 [[ -s "/Users/aidan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aidan/.sdkman/bin/sdkman-init.sh"
+[ -f "/Users/aidan/.ghcup/env" ] && source "/Users/aidan/.ghcup/env" # ghcup-env
