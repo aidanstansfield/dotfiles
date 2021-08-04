@@ -19,6 +19,10 @@ zstyle :compinstall filename '/home/aidan/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     MACHINE=Linux;;
