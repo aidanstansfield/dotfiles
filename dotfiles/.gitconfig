@@ -1,3 +1,5 @@
 [user]
 	email = aidan.stansfield@gmail.com
 	name = Aidan Stansfield
+[core]
+	editor = vim

@@ -7,6 +7,7 @@ esac
 
 if [[ $MACHINE == "Mac" ]]; then
     alias up='brew update && brew upgrade'
+    alias sqlmap='/opt/sqlmap-dev/sqlmap.py'
 elif [[ $MACHINE == "Linux" ]]; then
     alias up='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 fi
